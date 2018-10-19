@@ -6,6 +6,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Astronomy App</h1>
+        <div className="navbar">{/* <Navbar /> */}</div>
+        <div className="main-content">{/* <AstronomyContainer /> */}</div>
       </div>
     );
   }
