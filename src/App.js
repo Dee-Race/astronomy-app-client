@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import AstronomyContainer from "./containers/AstronomyContainer";
 
 class App extends Component {
   render() {
@@ -7,7 +8,9 @@ class App extends Component {
       <div className="App">
         <h1>Astronomy App</h1>
         <div className="navbar">{/* <Navbar /> */}</div>
-        <div className="main-content">{/* <AstronomyContainer /> */}</div>
+        <div className="main-content">
+          <AstronomyContainer />
+        </div>
       </div>
     );
   }

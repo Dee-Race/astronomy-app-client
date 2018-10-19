@@ -6,22 +6,20 @@ class AstronomyContainer extends Component {
     astronomy: []
   };
 
-  fetchAstronomy = () => {
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`;
-    fetch(`${url}`)
-      .then(resp => resp.json())
-      .then(data => this.setState({ astronomy: data.results }));
-    console.log(this.state.astronomy);
-  };
+  getAstronomy = () => {
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${
+      process.env.REACT_APP_NASA_API_KEY
+    }`;
 
-  componentDidMount() {
-    this.fetchAstronomy();
-  }
+    fetch(`${url}`)
+      .then(response => response.json())
+      .then(data => this.setState({ astronomy: data.results }));
+  };
 
   render() {
     return (
       <div>
-        <AstronomyDescription />
+        <AstronomyDescription data={this.state.astronomy} />
       </div>
     );
   }
