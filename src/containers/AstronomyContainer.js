@@ -1,23 +1,30 @@
 import React, { Component } from "react";
 import AstronomyDescription from "../components/AstronomyDesc";
 
+const URL = `https://api.nasa.gov/planetary/apod?api_key=${
+  process.env.REACT_APP_NASA_API_KEY
+}`;
+
 class AstronomyContainer extends Component {
   state = {
+    fetchingData: true,
     astronomy: []
   };
 
   componentDidMount() {
-    const URL = `https://api.nasa.gov/planetary/apod?api_key=${
-      process.env.REACT_APP_NASA_API_KEY
-    }`;
-
-    fetch(URL)
+    fetch(`${URL}`)
       .then(response => response.json())
-      .then(response => this.setState({ astronomy: response.data }));
+      .then(astronomy =>
+        this.setState({
+          fetchingData: false,
+          astronomy
+        })
+      );
   }
 
   render() {
-    const { astronomy } = this.state;
+    const { fetchingData, astronomy } = this.state;
+    console.log("Astronomy data: ", astronomy);
     return (
       <div>
         <AstronomyDescription data={astronomy} />

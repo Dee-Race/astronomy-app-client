@@ -2,16 +2,17 @@ import React from "react";
 import AstronomyImg from "./AstronomyImg";
 
 const AstronomyDescription = props => {
+  const { title, hdurl, url, explanation, date, copyright } = props.data;
   return (
     <div className="astronomy-info">
-      <h3 className="astronomy-title">{props.data.title}</h3>
-      <a href={props.data.hdurl} className="astronomy-image-wrapper">
-        <img src={props.data.url} alt={props.data.title} />
+      <h3 className="astronomy-title">{title}</h3>
+      <a href={hdurl} className="astronomy-image-wrapper">
+        <img src={url} alt={title} />
       </a>
-      <p>{props.data.explanation}</p>
+      <p>{explanation}</p>
 
       <span>
-        {props.data.date}, {props.data.copyright}
+        {date}, {copyright}
       </span>
     </div>
   );
