@@ -13,6 +13,7 @@ import {
   DropdownItem
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
+import AboutPage from "./About";
 
 class NavbarFeatures extends Component {
   constructor(props) {
@@ -41,10 +42,10 @@ class NavbarFeatures extends Component {
           <Collapse isOpen={this.state.collapse} navbar>
             <NavbarNav left>
               <NavItem active>
-                <NavLink to="#">Home</NavLink>
+                <NavLink to="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="#">About</NavLink>
+                <NavLink to="/about">About</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="#">Create a Galaxy</NavLink>

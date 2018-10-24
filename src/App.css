@@ -12,3 +12,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+h6 {
+  padding: 10px;
+}
+
+.astronomy-image-wrapper {
+  width: 45%;
+}
