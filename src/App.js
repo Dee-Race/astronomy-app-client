@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavbarFeatures from "./components/Navbar";
 import AstronomyContainer from "./containers/AstronomyContainer";
 import AboutPage from "./components/About";
+import EarthContainer from "./containers/EarthContainer";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <NavbarFeatures className="Navbar" />
             <Route exact path="/" component={AstronomyContainer} />
             <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/earth" component={EarthContainer} />
           </div>
         </Router>
       </div>

@@ -47,7 +47,7 @@ class NavbarFeatures extends Component {
                 <NavLink to="/about">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="#">Create a Galaxy</NavLink>
+                <NavLink to="/earth">Earth</NavLink>
               </NavItem>
               <NavItem>
                 <Dropdown>
