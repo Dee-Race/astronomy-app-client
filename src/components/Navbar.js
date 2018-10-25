@@ -13,7 +13,6 @@ import {
   DropdownItem
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
-import AboutPage from "./About";
 
 class NavbarFeatures extends Component {
   constructor(props) {

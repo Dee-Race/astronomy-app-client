@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 import "./App.css";
-import AstronomyContainer from "./containers/AstronomyContainer";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import NavbarFeatures from "./components/Navbar";
+import AstronomyContainer from "./containers/AstronomyContainer";
+import AboutPage from "./components/About";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavbarFeatures className="Navbar" />
-        <div className="main-content">
-          <AstronomyContainer />
-        </div>
+        <Router>
+          <div>
+            <NavbarFeatures className="Navbar" />
+            <Route exact path="/" component={AstronomyContainer} />
+            <Route exact path="/about" component={AboutPage} />
+          </div>
+        </Router>
       </div>
     );
   }
