@@ -52,11 +52,11 @@ class NavbarFeatures extends Component {
               <NavItem>
                 <Dropdown>
                   <DropdownToggle nav caret>
-                    Dropdown
+                    AstroNotes
                   </DropdownToggle>
                   <DropdownMenu>
-                    <DropdownItem href="#">Action</DropdownItem>
-                    <DropdownItem href="#">Another Action</DropdownItem>
+                    <DropdownItem href="#">New Note</DropdownItem>
+                    <DropdownItem href="#">All Astro Notes</DropdownItem>
                     <DropdownItem href="#">Something else here</DropdownItem>
                     <DropdownItem href="#">Something else here</DropdownItem>
                   </DropdownMenu>
