@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 
 class NotesContainer extends Component {
+  state = {
+    notes: []
+  };
+
   render() {
-    return <p> Notes Container </p>;
+    return <div className="Notes-Container">Notes</div>;
   }
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import AstronomyImg from "./AstronomyImg";
+import "./App.css";
 
 const AstronomyDescription = props => {
   const { title, hdurl, url, explanation, date, copyright } = props.data;
