@@ -1,7 +1,7 @@
 import React from "react";
 
 const NotesForm = () => {
-  const submit = event => {
+  const handleSubmit = event => {
     event.preventDefault();
     date.value = "";
     title.value = "";
@@ -9,10 +9,10 @@ const NotesForm = () => {
   };
 
   return (
-    <form onSubmit={submit}>
-      <input type="text" placeholder="Date..." />
-      <input type="text" placeholder="Title..." />
-      <input type="text" placeholder="Content..." />
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="date" placeholder="Date..." />
+      <input type="text" name="title" placeholder="Title..." />
+      <input type="text" name="content" placeholder="Content..." />
       <button>Add AstroNote</button>
     </form>
   );
