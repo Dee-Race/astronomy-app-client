@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavbarFeatures from "./components/Navbar";
 import AstronomyContainer from "./containers/AstronomyContainer";
 import AboutPage from "./components/About";
-import EarthContainer from "./containers/EarthContainer";
+//import EarthContainer from "./containers/EarthContainer";
 
 class App extends Component {
   render() {
