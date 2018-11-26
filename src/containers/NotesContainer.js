@@ -8,20 +8,19 @@ class NotesContainer extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3001/api/v1/notes.json").then(response => {
-      console.log(response);
-      this.setState({
-        notes: response.data
+    fetch("http://localhost:3001/api/v1/notes.json")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        this.setState({ notes: data });
       });
-    });
   }
 
   render() {
     return (
-      <div className="Notes-Container">
-        {this.state.notes.map(note => {
-          return <Note note={note} key={note.id} />;
-        })}
+      <div>
+        <Note notes={this.state.notes} />
         <NotesForm />
       </div>
     );
