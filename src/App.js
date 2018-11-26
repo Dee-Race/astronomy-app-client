@@ -16,7 +16,6 @@ class App extends Component {
             <NavbarFeatures className="Navbar" />
             <Route exact path="/" component={AstronomyContainer} />
             <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/earth" component={EarthContainer} />
           </div>
         </Router>
       </div>

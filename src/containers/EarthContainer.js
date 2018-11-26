@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/* import React, { Component } from "react";
 import EarthPhotoInfo from "../components/EarthPhotoInfo";
 
 const URL = `https://api.nasa.gov/EPIC/api/natural/images?api_key=${
@@ -30,7 +30,9 @@ class EarthContainer extends Component {
         <EarthPhotoInfo data={earthPhotoData} />
       </div>
     );
-  }
+   }
 }
 
-export default EarthContainer;
+export default EarthContainer;  */
+
+// TODO : Add in this feature at a later time

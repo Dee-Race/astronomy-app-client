@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 
 const EarthPhotoInfo = props => {
   const { identifier, caption, image, date } = props.data;
@@ -17,4 +17,7 @@ const EarthPhotoInfo = props => {
   );
 };
 
-export default EarthPhotoInfo;
+export default EarthPhotoInfo; */
+
+// TODO : Add in this feature at a later time.
+//        - Add nav item and nav link to navbar in component when revisiting feature

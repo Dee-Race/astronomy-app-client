@@ -47,9 +47,6 @@ class NavbarFeatures extends Component {
                 <NavLink to="/about">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/earth">Earth</NavLink>
-              </NavItem>
-              <NavItem>
                 <Dropdown>
                   <DropdownToggle nav caret>
                     AstroNotes
