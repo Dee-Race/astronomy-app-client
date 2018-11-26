@@ -7,6 +7,15 @@ class NotesContainer extends Component {
     notes: []
   };
 
+  componentDidMount() {
+    fetch("http://localhost:3001/api/v1/notes.json").then(response => {
+      console.log(response);
+      this.setState({
+        notes: response.data
+      });
+    });
+  }
+
   render() {
     return (
       <div className="Notes-Container">
