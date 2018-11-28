@@ -1,9 +1,10 @@
 import React from "react";
+import "../App.css";
 
 const AboutPage = () => {
   const url = "https://apod.nasa.gov/apod/archivepix.html";
   return (
-    <div>
+    <div className="about-page">
       <p>
         Get inspired by NASA's Astronomy Picture of the Day to save and record
         information on locations, dates, and content. Are you inspired by an

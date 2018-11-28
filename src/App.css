@@ -9,3 +9,19 @@ h6 {
 .astronomy-image-wrapper {
   width: 75%;
 }
+
+.about-page {
+  padding: 20px;
+  width: 50%;
+  font-size: 15px;
+  text-align: center;
+  margin: 10px;
+}
+
+.note-form {
+  width: 50%;
+  padding: 12px 20px;
+  background-color: lightcyan;
+  color: black;
+  margin: 10px;
+}
