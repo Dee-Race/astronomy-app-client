@@ -10,6 +10,18 @@ h6 {
   width: 75%;
 }
 
+p {
+  padding: 20px;
+}
+
+h4 {
+  padding: 20px;
+}
+
+.astronomy-title {
+  padding: 20px;
+}
+
 .about-page {
   padding: 20px;
   width: 50%;
@@ -18,10 +30,10 @@ h6 {
   margin: 10px;
 }
 
-.note-form {
+/* .note-form {
   width: 50%;
   padding: 12px 20px;
   background-color: lightcyan;
   color: black;
   margin: 10px;
-}
+} */

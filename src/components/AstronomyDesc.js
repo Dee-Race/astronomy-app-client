@@ -39,7 +39,7 @@ const AstronomyDescription = props => {
 
   return (
     <div className="astronomy-info">
-      <h6>NASA PHOTO OF THE DAY</h6>
+      <h4>NASA PHOTO OF THE DAY</h4>
       <span>
         <h6>{date}</h6>
       </span>
@@ -48,7 +48,10 @@ const AstronomyDescription = props => {
       {renderMediaType()}
       <p>{explanation}</p>
 
-      <span>{copyright}</span>
+      <span>
+        Copyright:
+        {copyright}
+      </span>
     </div>
   );
 };

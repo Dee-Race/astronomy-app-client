@@ -7,6 +7,7 @@ const NotesForm = () => {
       <MDBRow>
         <MDBCol md="6">
           <div className="form-group">
+            <h3>Create an AstroNote</h3>
             <MDBInput label="Title" size="lg" />
             <MDBInput label="Date" />
             <MDBInput label="Content" size="lg" />
@@ -19,11 +20,9 @@ const NotesForm = () => {
 
 export default NotesForm;
 
-{
-  /* <form>
+/* <form>
 <input type="text" name="date" placeholder="Date..." />
 <input type="text" name="title" placeholder="Title..." />
 <input type="text" name="content" placeholder="Content..." />
 <button>Add AstroNote</button>
 </form> */
-}
