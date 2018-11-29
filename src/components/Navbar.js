@@ -35,7 +35,7 @@ class NavbarFeatures extends Component {
       <Router>
         <Navbar color="indigo" dark expand="md" scrolling>
           <NavbarBrand href="/">
-            <strong>Astronomy App</strong>
+            <strong>AstronomyApp</strong>
           </NavbarBrand>
           {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
           <Collapse isOpen={this.state.collapse} navbar>

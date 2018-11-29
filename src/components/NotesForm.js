@@ -1,18 +1,21 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 
 const NotesForm = () => {
   return (
     <MDBContainer>
       <MDBRow>
         <MDBCol md="6">
-          <div className="form-group">
-            <h3>Create an AstroNote</h3>
-            <MDBInput label="Title" size="lg" />
-            <MDBInput label="Date" size="lg" />
-            <MDBInput label="Content" size="lg" />
-            <MDBInput label="Submitted By: " size="sm" />
-          </div>
+          <form>
+            <div className="form-group">
+              <h3>Create an AstroNote</h3>
+              <MDBInput label="Title" size="lg" />
+              <MDBInput label="Date" size="lg" />
+              <MDBInput label="Content" size="lg" />
+              <MDBInput label="Submitted By: " size="sm" />
+            </div>
+            <MDBBtn>Submit AstroNote</MDBBtn>
+          </form>
         </MDBCol>
       </MDBRow>
     </MDBContainer>
