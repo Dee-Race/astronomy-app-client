@@ -10,7 +10,8 @@ const AboutPage = () => {
         information on locations, dates, and content. Are you inspired by an
         image and it's location to plan a trip? Are you fascinated by the new
         astronomy information and want to further research a concept? Visit the
-        AstroApp daily to view outstanding images and create a new AstroNote!
+        AstronomyApp daily to view outstanding images and create a new
+        AstroNote!
       </p>
       <p>
         Browse previous AstroNotes submission to learn more about the preceding
