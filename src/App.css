@@ -7,11 +7,13 @@ h6 {
 }
 
 .astronomy-image-wrapper {
-  width: 75%;
+  width: 90%;
 }
 
 p {
   padding: 20px;
+  width: 90%;
+  text-align: center;
 }
 
 h4 {

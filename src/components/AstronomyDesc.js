@@ -48,10 +48,7 @@ const AstronomyDescription = props => {
       {renderMediaType()}
       <p>{explanation}</p>
 
-      <span>
-        Copyright:
-        {copyright}
-      </span>
+      <span>Copyright: {copyright}</span>
     </div>
   );
 };
