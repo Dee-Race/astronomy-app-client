@@ -13,6 +13,11 @@ const AboutPage = () => {
         AstroApp daily to view outstanding images and create a new AstroNote!
       </p>
       <p>
+        Browse previous AstroNotes submission to learn more about the preceding
+        astronomical daily photos. And don't forget to create a new AstroNote to
+        add to the collection!
+      </p>
+      <p>
         Interested in viewing previous daily photos and videos from NASA? Click{" "}
         <a href={url}>HERE!</a>
       </p>
