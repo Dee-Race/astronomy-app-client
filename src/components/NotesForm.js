@@ -9,8 +9,9 @@ const NotesForm = () => {
           <div className="form-group">
             <h3>Create an AstroNote</h3>
             <MDBInput label="Title" size="lg" />
-            <MDBInput label="Date" />
+            <MDBInput label="Date" size="lg" />
             <MDBInput label="Content" size="lg" />
+            <MDBInput label="Submitted By: " size="sm" />
           </div>
         </MDBCol>
       </MDBRow>
