@@ -9,12 +9,14 @@ const NotesForm = () => {
           <form>
             <div className="form-group">
               <h3>Create an AstroNote</h3>
-              <MDBInput label="Title" size="lg" />
-              <MDBInput label="Date" size="lg" />
-              <MDBInput label="Content" size="lg" />
-              <MDBInput label="Submitted By: " size="sm" />
+              <MDBInput label="Title" type="title" size="lg" />
+              <MDBInput label="Date" type="date" size="lg" />
+              <MDBInput label="Content" type="content" size="lg" />
+              <MDBInput label="Submitted By: " type="submitted_by" size="sm" />
             </div>
-            <MDBBtn>Submit AstroNote</MDBBtn>
+            <MDBBtn color="indigo" type="submit">
+              Submit
+            </MDBBtn>
           </form>
         </MDBCol>
       </MDBRow>
