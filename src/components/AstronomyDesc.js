@@ -1,5 +1,4 @@
 import React from "react";
-import AstronomyImg from "./AstronomyImg";
 
 const AstronomyDescription = props => {
   const {
