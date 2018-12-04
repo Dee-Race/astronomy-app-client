@@ -1,29 +1,24 @@
 import React, { Component } from "react";
-import NotesForm from "../components/NotesForm";
 import Note from "../components/Note";
+import NotesForm from "../components/NotesForm";
 
 class NotesContainer extends Component {
-  state = {
-    notes: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      notes: []
+    };
+  }
 
   componentDidMount() {
-    fetch("http://localhost:3001/api/v1/notes.json")
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.setState({ notes: data });
-      });
+    fetch("http://localhost:3001/api/v1/notes.json").then(response => {
+      console.log(response);
+      this.setState({ notes: response.data });
+    });
   }
 
   render() {
-    return (
-      <div>
-        <Note notes={this.state.notes} />
-        <NotesForm />
-      </div>
-    );
+    return <div className="notes-container">Notes</div>;
   }
 }
 

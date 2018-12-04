@@ -19,7 +19,7 @@ class App extends Component {
             <Route exact path="/" component={AstronomyContainer} />
             <Route exact path="/" component={NotesForm} />
             <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/new" component={NotesContainer} />
+            <Route exact path="/notes" component={NotesContainer} />
           </div>
         </Router>
       </div>

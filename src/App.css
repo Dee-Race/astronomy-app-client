@@ -10,6 +10,15 @@ h6 {
   width: 90%;
 }
 
+.astronomy-card {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  background: white;
+  float: left;
+  text-align: left;
+}
+
 p {
   padding: 20px;
   width: 90%;
