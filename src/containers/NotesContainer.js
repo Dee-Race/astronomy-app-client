@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Note from "../components/Note";
 import NotesForm from "../components/NotesForm";
+import "./Notes.css";
 
 class NotesContainer extends Component {
   constructor(props) {
