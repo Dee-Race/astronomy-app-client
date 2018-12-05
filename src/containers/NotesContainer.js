@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Note from "../components/Note";
+import Notes from "../components/Notes";
 import NotesForm from "../components/NotesForm";
 import "./Notes.css";
 
@@ -22,7 +22,8 @@ class NotesContainer extends Component {
   render() {
     return (
       <div className="notes-container">
-        <Note notes={this.state.notes} />
+        <Notes notes={this.state.notes} />
+        <NotesForm />
       </div>
     );
   }

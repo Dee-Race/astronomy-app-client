@@ -2,7 +2,7 @@
   height: 400px;
   width: 400px;
   margin: 10px;
-  padding: 6px;
+  padding: 10px;
   background: whitesmoke;
   float: left;
   text-align: center;
@@ -12,4 +12,8 @@
 
 .astronomy-note-card:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.astronomy-note-container {
+  padding: 10px;
 }
