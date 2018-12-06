@@ -11,3 +11,15 @@ const notesReducer = (state = [], action) => {
       return state;
   }
 };
+
+const reducers = combineReducers({
+  notes: notes
+});
+
+const middleware = [thunk];
+
+export default createStore(
+  reducers,
+  applyMiddleware(...middleware),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
