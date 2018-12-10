@@ -15,8 +15,10 @@ const notesReducer = (state = [], action) => {
 
 // reducers returns the state of what you want
 
+// dispatch passes object to reducers - getting notesReducer and updating state
+
 const reducers = combineReducers({
-  notes: notes
+  notes: notesReducer
 });
 
 const middleware = [thunk];
