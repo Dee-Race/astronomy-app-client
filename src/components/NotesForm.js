@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 
 class NotesForm extends Component {
@@ -26,7 +27,13 @@ class NotesForm extends Component {
   }
 }
 
-export default NotesForm;
+const mapStateToProps = state => {
+  return {
+    noteFormData: state.surfboardFormData
+  };
+};
+
+export default connect(mapStateToProps)(NotesForm);
 
 /* <form>
 <input type="text" name="date" placeholder="Date..." />
