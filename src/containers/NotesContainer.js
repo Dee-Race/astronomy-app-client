@@ -15,7 +15,9 @@ class NotesContainer extends Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.getNotes();
+  }
 
   render() {
     return (

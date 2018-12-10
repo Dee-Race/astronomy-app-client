@@ -11,7 +11,7 @@ const setNotes = notes => {
 
 // Async Actions
 
-const getNotes = () => {
+export const getNotes = () => {
   dispatch => {
     return fetch(`${API_URL}/notes`)
       .then(response => response.json())
