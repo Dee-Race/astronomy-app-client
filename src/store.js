@@ -1,24 +1,11 @@
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
+import notes from "./reducers/notes";
 // applyMiddleware makes asynchronus calls
 
 import thunk from "redux-thunk";
 
-const notesReducer = (state = [], action) => {
-  switch (action.type) {
-    case "GET_NOTES":
-      return action.notes;
-
-    default:
-      return state;
-  }
-};
-
-// reducers returns the state of what you want
-
-// dispatch passes object to reducers - getting notesReducer and updating state
-
 const reducers = combineReducers({
-  notes: notesReducer
+  notes
 });
 
 const middleware = [thunk];
