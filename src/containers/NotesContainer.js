@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Notes from "../components/Notes";
 import NotesForm from "../components/NotesForm";
+import { getNotes } from "../actions/notes";
 import "./Notes.css";
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -13,11 +15,7 @@ class NotesContainer extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(`${API_URL}/notes`)
-      .then(response => response.json())
-      .then(notes => this.setState({ notes }));
-  }
+  componentDidMount() {}
 
   render() {
     return (
@@ -29,4 +27,13 @@ class NotesContainer extends Component {
   }
 }
 
-export default NotesContainer;
+const mapStateToProps = state => {
+  return {
+    notes: state.notes
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getNotes }
+)(NotesContainer);

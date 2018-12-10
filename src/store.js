@@ -4,6 +4,9 @@ import notes from "./reducers/notes";
 
 import thunk from "redux-thunk";
 
+// this.props.store.dispatch - passes the object to the reducers,
+// then updates state from reducer function - notes reducer
+
 const reducers = combineReducers({
   notes
 });
