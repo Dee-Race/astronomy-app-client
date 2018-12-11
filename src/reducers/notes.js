@@ -4,7 +4,7 @@ export default (state = [], action) => {
       return action.notes;
 
     case "CREATE_NOTE_SUCCESS":
-      return state.concast(action.note);
+      return state.concat(action.note);
 
     default:
       return state;
