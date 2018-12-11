@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+import { updateNoteFormData } from "../actions/noteForm";
 
 class NotesForm extends Component {
+  handleOnChange = event => {
+    const { name, value } = event.target;
+    const currentNoteFormData = Object.assign({}, this.props.noteFormData, {
+      [name]: value
+    });
+    this.props.updateNoteFormData(currentNoteFormData);
+  };
+
   render() {
     const { title, date, content, submitted_by } = this.props.noteFormData;
 
@@ -15,6 +24,7 @@ class NotesForm extends Component {
                 <h3>Create an AstroNote</h3>
                 <MDBInput
                   type="text"
+                  onChange={this.handleOnChange}
                   name="title"
                   value={title}
                   label="Title"
@@ -22,6 +32,7 @@ class NotesForm extends Component {
                 />
                 <MDBInput
                   type="text"
+                  onChange={this.handleOnChange}
                   name="date"
                   value={date}
                   label="Date"
@@ -29,6 +40,7 @@ class NotesForm extends Component {
                 />
                 <MDBInput
                   type="text"
+                  onChange={this.handleOnChange}
                   name="content"
                   value={content}
                   label="Content"
@@ -36,6 +48,7 @@ class NotesForm extends Component {
                 />
                 <MDBInput
                   type="text"
+                  onChange={this.handleOnChange}
                   name="submitted_by"
                   value={submitted_by}
                   label="Submitted By: "
@@ -59,7 +72,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(NotesForm);
+export default connect(
+  mapStateToProps,
+  { updateNoteFormData }
+)(NotesForm);
 
 /* <form>
 <input type="text" name="date" placeholder="Date..." />

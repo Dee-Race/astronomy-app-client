@@ -5,8 +5,6 @@ import NotesForm from "./NotesFormContainer";
 import { getNotes } from "../actions/notes";
 import "./Notes.css";
 
-const API_URL = process.env.REACT_APP_API_URL;
-
 class NotesContainer extends Component {
   componentDidMount() {
     this.props.getNotes();
