@@ -6,7 +6,7 @@ import NavbarFeatures from "./components/Navbar";
 import AstronomyContainer from "./containers/AstronomyContainer";
 import AboutPage from "./components/About";
 import NotesContainer from "./containers/NotesContainer";
-import NotesForm from "./components/NotesForm";
+import NotesForm from "./containers/NotesFormContainer";
 //import EarthContainer from "./containers/EarthContainer";
 
 class App extends Component {

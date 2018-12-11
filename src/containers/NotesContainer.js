@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Notes from "../components/Notes";
-import NotesForm from "../components/NotesForm";
+import NotesForm from "./NotesFormContainer";
 import { getNotes } from "../actions/notes";
 import "./Notes.css";
 
