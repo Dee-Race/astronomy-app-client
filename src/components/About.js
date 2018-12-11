@@ -23,7 +23,7 @@ const AboutPage = () => {
         Interested in viewing previous daily photos and videos from NASA? Click{" "}
         <a href={url}>HERE!</a>
       </p>
-      <img src={image_url} alt="astronomy photo" />
+      <img src={image_url} alt="astronomy" />
     </div>
   );
 };

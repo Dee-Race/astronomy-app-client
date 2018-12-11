@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Notes from "../components/Notes";
-import NotesForm from "./NotesFormContainer";
+import NotesFormContainer from "./NotesFormContainer";
 import { getNotes } from "../actions/notes";
 import "./Notes.css";
 
@@ -13,8 +13,8 @@ class NotesContainer extends Component {
   render() {
     return (
       <div className="notes-container">
-        <Notes notes={this.state.notes} />
-        <NotesForm />
+        <Notes notes={this.props.notes} />
+        <NotesFormContainer />
       </div>
     );
   }
