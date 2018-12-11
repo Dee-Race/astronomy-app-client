@@ -6,7 +6,7 @@ import NavbarFeatures from "./components/Navbar";
 import AstronomyContainer from "./containers/AstronomyContainer";
 import AboutPage from "./components/About";
 import NotesContainer from "./containers/NotesContainer";
-import NotesForm from "./containers/NotesFormContainer";
+import NotesFormContainer from "./containers/NotesFormContainer";
 //import EarthContainer from "./containers/EarthContainer";
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
           <div>
             <NavbarFeatures className="Navbar" />
             <Route exact path="/" component={AstronomyContainer} />
-            <Route exact path="/" component={NotesForm} />
+            <Route exact path="/" component={NotesFormContainer} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/notes" component={NotesContainer} />
           </div>

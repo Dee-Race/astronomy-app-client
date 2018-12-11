@@ -2,14 +2,20 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 import { updateNoteFormData } from "../actions/noteForm";
+import { createNote } from "../actions/notes";
 
-class NotesForm extends Component {
+class NotesFormContainer extends Component {
   handleOnChange = event => {
     const { name, value } = event.target;
     const currentNoteFormData = Object.assign({}, this.props.noteFormData, {
       [name]: value
     });
     this.props.updateNoteFormData(currentNoteFormData);
+  };
+
+  handleOnSubmit = event => {
+    event.preventDefault();
+    this.props.createNote(this.props.noteFormData);
   };
 
   render() {
@@ -19,7 +25,7 @@ class NotesForm extends Component {
       <MDBContainer>
         <MDBRow>
           <MDBCol md="6">
-            <form>
+            <form onSubmit={this.handleOnSubmit}>
               <div className="form-group">
                 <h3>Create an AstroNote</h3>
                 <MDBInput
@@ -74,8 +80,8 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { updateNoteFormData }
-)(NotesForm);
+  { updateNoteFormData, createNote }
+)(NotesFormContainer);
 
 /* <form>
 <input type="text" name="date" placeholder="Date..." />

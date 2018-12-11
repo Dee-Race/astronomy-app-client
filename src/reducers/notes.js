@@ -3,6 +3,9 @@ export default (state = [], action) => {
     case "GET_NOTES_SUCCESS":
       return action.notes;
 
+    case "CREATE_NOTE_SUCCESS":
+      return state.concast(action.note);
+
     default:
       return state;
   }
