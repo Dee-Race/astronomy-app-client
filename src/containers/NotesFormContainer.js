@@ -4,6 +4,8 @@ import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 
 class NotesForm extends Component {
   render() {
+    const { title, date, content, submitted_by } = this.props.noteFormData;
+
     return (
       <MDBContainer>
         <MDBRow>
@@ -11,10 +13,34 @@ class NotesForm extends Component {
             <form>
               <div className="form-group">
                 <h3>Create an AstroNote</h3>
-                <MDBInput label="Title" size="lg" />
-                <MDBInput label="Date" size="lg" />
-                <MDBInput label="Content" size="lg" />
-                <MDBInput label="Submitted By: " size="sm" />
+                <MDBInput
+                  type="text"
+                  name="title"
+                  value={title}
+                  label="Title"
+                  size="lg"
+                />
+                <MDBInput
+                  type="text"
+                  name="date"
+                  value={date}
+                  label="Date"
+                  size="lg"
+                />
+                <MDBInput
+                  type="text"
+                  name="content"
+                  value={content}
+                  label="Content"
+                  size="lg"
+                />
+                <MDBInput
+                  type="text"
+                  name="submitted_by"
+                  value={submitted_by}
+                  label="Submitted By: "
+                  size="sm"
+                />
               </div>
               <MDBBtn color="indigo" type="submit">
                 Submit
@@ -29,7 +55,7 @@ class NotesForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    noteFormData: state.surfboardFormData
+    noteFormData: state.noteFormData
   };
 };
 
