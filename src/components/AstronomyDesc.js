@@ -45,7 +45,7 @@ const AstronomyDescription = props => {
       <h3 className="astronomy-title">{title}</h3>
 
       {renderMediaType()}
-      <p>{explanation}</p>
+      <p className="astronomy-explanation">{explanation}</p>
 
       <span>Copyright: {copyright}</span>
     </div>

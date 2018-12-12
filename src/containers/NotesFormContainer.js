@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 import { updateNoteFormData } from "../actions/noteForm";
 import { createNote } from "../actions/notes";
+import "./Notes.css";
 
 class NotesFormContainer extends Component {
   handleOnChange = event => {

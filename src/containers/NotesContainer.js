@@ -14,7 +14,6 @@ class NotesContainer extends Component {
     return (
       <div className="notes-container">
         <Notes notes={this.props.notes} />
-        <NotesFormContainer />
       </div>
     );
   }
@@ -30,3 +29,6 @@ export default connect(
   mapStateToProps,
   { getNotes }
 )(NotesContainer);
+
+// NotesFormContainer - removed from this page, can be added again
+// NotesFormContainer will be added to the dropdown "new"

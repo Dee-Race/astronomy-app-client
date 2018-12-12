@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./containers/Notes.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import NavbarFeatures from "./components/Navbar";
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path="/" component={NotesFormContainer} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/notes" component={NotesContainer} />
+            <Route exact path="/new" component={NotesFormContainer} />
           </div>
         </Router>
       </div>
