@@ -6,6 +6,9 @@ export default (state = [], action) => {
     case "CREATE_NOTE_SUCCESS":
       return state.concat(action.note);
 
+    case "DELETE_NOTE":
+      return state.filter(note => note.id !== action.note);
+
     default:
       return state;
   }
