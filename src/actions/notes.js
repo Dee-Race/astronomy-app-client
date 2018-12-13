@@ -2,7 +2,7 @@ import { resetNoteForm } from "./noteForm";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-// Action Creators
+// Action Creators - functions that go to the reducers
 
 const setNotes = notes => {
   return {
@@ -18,7 +18,14 @@ const addNote = note => {
   };
 };
 
-// Async Actions
+const destroyNote = note => {
+  return {
+    type: "DELETE_NOTE",
+    note
+  };
+};
+
+// Async Actions //
 
 export const getNotes = () => {
   return dispatch => {
@@ -44,5 +51,15 @@ export const createNote = note => {
         dispatch(resetNoteForm());
       })
       .catch(error => console.log(error));
+  };
+};
+
+export const deleteNote = note => {
+  return dispatch => {
+    return fetch(`${API_URL}/notes/${note.id}`, {
+      method: "DELETE"
+    })
+      .then(dispatch(destroyNote(note.id)))
+      .catch(error => error);
   };
 };
