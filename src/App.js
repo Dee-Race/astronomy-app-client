@@ -14,16 +14,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
-          <div>
-            <NavbarFeatures className="Navbar" />
-            <Route exact path="/" component={AstronomyContainer} />
-            <Route exact path="/" component={NotesFormContainer} />
-            <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/notes" component={NotesContainer} />
-            <Route exact path="/new" component={NotesFormContainer} />
-          </div>
-        </Router>
+        <div>
+          <Router>
+            <React.Fragment>
+              <NavbarFeatures className="Navbar" />
+              <Route exact path="/" component={AstronomyContainer} />
+              <Route exact path="/" component={NotesFormContainer} />
+              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/notes" component={NotesContainer} />
+              <Route exact path="/new" component={NotesFormContainer} />
+            </React.Fragment>
+          </Router>
+        </div>
       </div>
     );
   }
