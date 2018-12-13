@@ -8,6 +8,7 @@ import AstronomyContainer from "./containers/AstronomyContainer";
 import AboutPage from "./components/About";
 import NotesContainer from "./containers/NotesContainer";
 import NotesFormContainer from "./containers/NotesFormContainer";
+import NoteContainer from "./containers/NoteContainer";
 //import EarthContainer from "./containers/EarthContainer";
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
               <Route exact path="/about" component={AboutPage} />
               <Route exact path="/notes" component={NotesContainer} />
               <Route exact path="/new" component={NotesFormContainer} />
+              <Route exact path="/notes/:note_id" component={NoteContainer} />
             </React.Fragment>
           </Router>
         </div>
