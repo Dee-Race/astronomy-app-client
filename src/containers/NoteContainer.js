@@ -5,7 +5,7 @@ import { getNotes, deleteNote } from "../actions/notes";
 const Note = props => {
   return (
     <div>
-      <p>AstroNote: {props.note.content}</p>
+      <span>AstroNote: {props.note.text}</span>
       <button onClick={() => props.deleteNote(props.note.id)}>Destroy</button>
     </div>
   );
