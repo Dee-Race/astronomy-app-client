@@ -2,7 +2,6 @@ import React from "react";
 import "../App.css";
 
 const AboutPage = () => {
-  const image_url = "https://unsplash.com/photos/2pUz1VSINsA.jpg";
   const url = "https://apod.nasa.gov/apod/archivepix.html";
   return (
     <div className="about-page">
@@ -23,7 +22,6 @@ const AboutPage = () => {
         Interested in viewing previous daily photos and videos from NASA? Click{" "}
         <a href={url}>HERE!</a>
       </p>
-      <img src={image_url} alt="astronomy" />
     </div>
   );
 };
