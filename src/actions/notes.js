@@ -2,36 +2,13 @@ import { resetNoteForm } from "./noteForm";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-// Action Creators - functions that go to the reducers
-
-const setNotes = notes => {
-  return {
-    type: "GET_NOTES_SUCCESS",
-    notes
-  };
-};
-
-const addNote = note => {
-  return {
-    type: "CREATE_NOTE_SUCCESS",
-    note
-  };
-};
-
-const destroyNote = note => {
-  return {
-    type: "DELETE_NOTE",
-    note
-  };
-};
-
 // Async Actions //
 
 export const getNotes = () => {
   return dispatch => {
     return fetch(`${API_URL}/notes`)
       .then(response => response.json())
-      .then(notes => dispatch(setNotes(notes)))
+      .then(notes => dispatch({ type: "GET_NOTES_SUCCESS", notes: notes }))
       .catch(error => console.log(error));
   };
 };
@@ -47,7 +24,7 @@ export const createNote = note => {
     })
       .then(response => response.json())
       .then(note => {
-        dispatch(addNote(note));
+        dispatch({ type: "CREATE_NOTE_SUCCESS", payload: note });
         dispatch(resetNoteForm());
       })
       .catch(error => console.log(error));
@@ -56,10 +33,17 @@ export const createNote = note => {
 
 export const deleteNote = note => {
   return dispatch => {
-    return fetch(`${API_URL}/notes/${note.id}`, {
-      method: "DELETE"
+    return fetch(`${API_URL}/notes/${note}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application.json"
+      },
+      body: JSON.stringify({ note: note })
     })
-      .then(dispatch(destroyNote(note.id)))
-      .catch(error => error);
+      .then(response => response.json())
+      .then(note => {
+        dispatch({ type: "DELETE_NOTE_SUCCESS", payload: note });
+      })
+      .catch(error => console.log(error));
   };
 };
