@@ -5,15 +5,19 @@ const initialState = {
   submitted_by: ""
 };
 
-export default (state = initialState, action) => {
+export default function NoteFormReducer(
+  state = { initialState, noteFormData: [] },
+  action
+) {
   switch (action.type) {
-    case "UPDATED_DATA":
-      return action.noteFormData;
-
-    case "RESET_NOTE_FORM":
-      return initialState;
+    case "UPDATED_NOTEFORM_DATA":
+      const noteFormData = action.payload;
+      return {
+        ...state,
+        noteFormData: [...state.noteFormData, action.payload]
+      };
 
     default:
       return state;
   }
-};
+}
