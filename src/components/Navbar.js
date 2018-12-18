@@ -1,82 +1,25 @@
-import React, { Component } from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarNav,
-  NavbarToggler,
-  Collapse,
-  NavItem,
-  NavLink,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "mdbreact";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "../App.css";
 
-class NavbarFeatures extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapse: false,
-      isWideEnough: false
-    };
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick() {
-    this.setState({
-      collapse: !this.state.collapse
-    });
-  }
-
-  render() {
-    return (
-      <Router>
-        <Navbar color="indigo" dark expand="md" scrolling>
-          <NavbarBrand href="/">
-            <strong>AstronomyApp</strong>
-          </NavbarBrand>
-          {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
-          <Collapse isOpen={this.state.collapse} navbar>
-            <NavbarNav left>
-              <NavItem active>
-                <Link to="/">
-                  <NavLink>Home</NavLink>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/about">About</NavLink>
-              </NavItem>
-              <NavItem>
-                <Dropdown>
-                  <DropdownToggle nav caret>
-                    AstroNotes
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem href="/new">New Note</DropdownItem>
-                    <DropdownItem href="/notes">All Astro Notes</DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </NavItem>
-            </NavbarNav>
-            <NavbarNav right>
-              <NavItem>
-                <form className="form-inline md-form mt-0">
-                  <input
-                    className="form-control mr-sm-2 mb-0 text-white"
-                    type="text"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                </form>
-              </NavItem>
-            </NavbarNav>
-          </Collapse>
-        </Navbar>
-      </Router>
-    );
-  }
-}
-
-export default NavbarFeatures;
+export const Navbar = () => {
+  return (
+    <div className="navbar">
+      <a href="/" className="astronomy-app">
+        AstronomyApp
+      </a>
+      <NavLink to="/" className="home-button">
+        Home
+      </NavLink>
+      <NavLink to="/about" className="about-button">
+        About
+      </NavLink>
+      <NavLink to="/new" className="new-button">
+        New AstroNote
+      </NavLink>
+      <NavLink to="/notes" className="all-notes-button">
+        All AstroNotes
+      </NavLink>
+    </div>
+  );
+};

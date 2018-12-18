@@ -62,7 +62,7 @@ class NotesFormContainer extends Component {
                   size="sm"
                 />
               </div>
-              <MDBBtn color="indigo" type="submit">
+              <MDBBtn color="white" type="submit">
                 Submit
               </MDBBtn>
             </form>
