@@ -6,7 +6,7 @@ const Notes = props => (
   <div className="astronomy-note-container">
     <h1>Astro Notes</h1>
     {props.notes.map(note => (
-      <NoteCard key={note.id} note={note} deleteNote={props.deleteNote} />
+      <NoteCard key={note.id} note={note} delete={props.deleteNote} />
     ))}
   </div>
 );

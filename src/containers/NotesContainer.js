@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Notes from "../components/Notes";
-import NotesFormContainer from "./NotesFormContainer";
+import NoteCard from "../components/NoteCard";
+// import NotesFormContainer from "./NotesFormContainer";
 import { getNotes } from "../actions/notes";
 import "./Notes.css";
 
@@ -12,8 +12,15 @@ class NotesContainer extends Component {
 
   render() {
     return (
-      <div className="notes-container">
-        <Notes notes={this.props.notes} />
+      <div className="astronomy-note-container">
+        <h1>Astro Notes</h1>
+        {this.props.notes.map(note => (
+          <NoteCard
+            key={note.id}
+            note={note}
+            deleteNote={this.props.deleteNote}
+          />
+        ))}
       </div>
     );
   }
@@ -21,7 +28,7 @@ class NotesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    notes: state.notes
+    notes: state.notes.all
   };
 };
 

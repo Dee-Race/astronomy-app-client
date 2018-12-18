@@ -1,13 +1,22 @@
-export default (state = [], action) => {
+const initialState = {
+  all: [],
+  current: {}
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case "GET_NOTES_SUCCESS":
-      return action.notes;
+      return { ...state, current: action.notes };
 
     case "CREATE_NOTE_SUCCESS":
-      return state.concat(action.note);
+      return { ...state, all: [...state.all, action.note] };
 
     case "DELETE_NOTE":
-      return state.filter(note => note.id !== action.note);
+      debugger;
+      return {
+        ...state,
+        all: state.filter(note => note.id !== action.note.id)
+      };
 
     default:
       return state;
