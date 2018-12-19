@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AstronomyDescription from "../components/AstronomyDesc";
+import "../App.css";
 
 const URL = `https://api.nasa.gov/planetary/apod?api_key=${
   process.env.REACT_APP_NASA_API_KEY

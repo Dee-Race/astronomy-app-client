@@ -17,8 +17,8 @@ class NotesContainer extends Component {
     const { notes } = this.props;
     return (
       <div className="astronomy-note-container">
-        <h1>Astro Notes</h1>
         <NotesFormContainer />
+        <h1>AstroNotes</h1>
         {notes.map(note => (
           <NoteCard
             key={note.id}

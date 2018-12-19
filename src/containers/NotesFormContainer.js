@@ -25,7 +25,7 @@ class NotesFormContainer extends Component {
     return (
       <MDBContainer>
         <MDBRow>
-          <MDBCol md="6">
+          <MDBCol>
             <form onSubmit={this.handleOnSubmit}>
               <div className="form-group">
                 <h3>Create an AstroNote</h3>

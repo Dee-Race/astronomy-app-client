@@ -3,7 +3,7 @@ import "./App.css";
 import "./containers/Notes.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import { Navbar } from "./components/Navbar";
+import { NavbarFeatures } from "./components/Navbar";
 import AstronomyContainer from "./containers/AstronomyContainer";
 import AboutPage from "./components/About";
 import NotesContainer from "./containers/NotesContainer";
@@ -17,7 +17,7 @@ class App extends Component {
         <div>
           <Router>
             <React.Fragment>
-              <Navbar />
+              <NavbarFeatures />
               <Route exact path="/" component={AstronomyContainer} />
               <Route exact path="/" component={NotesFormContainer} />
               <Route exact path="/about" component={AboutPage} />

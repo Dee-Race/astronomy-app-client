@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "reactstrap";
 
 class NoteCard extends Component {
   handleOnClick(event) {
@@ -14,7 +15,9 @@ class NoteCard extends Component {
         <p>{note.content}</p>
         <p>
           Submitted By: {note.submitted_by} <br />
-          <button onClick={event => this.handleOnClick(event)}>Delete</button>
+          <Button color="white" onClick={event => this.handleOnClick(event)}>
+            Delete
+          </Button>
         </p>
       </div>
     );
