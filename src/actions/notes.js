@@ -1,49 +1,76 @@
-import { resetNoteForm } from "./noteForm";
-
 const API_URL = process.env.REACT_APP_API_URL;
 
 // Async Actions //
 
+// GET NOTES - FETCH REQUEST
+
 export const getNotes = () => {
+  let data = {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  };
+
   return dispatch => {
-    return fetch(`${API_URL}/notes`)
+    fetch(`${API_URL}/notes`, data)
       .then(response => response.json())
-      .then(notes => dispatch({ type: "GET_NOTES_SUCCESS", notes: notes }))
+      .then(notes =>
+        dispatch({
+          type: "GET_NOTES_SUCCESS",
+          payload: notes
+        })
+      )
       .catch(error => console.log(error));
   };
 };
+
+// POST - CREATE NOTES
 
 export const createNote = note => {
+  let data = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ note })
+  };
+
   return dispatch => {
-    return fetch(`${API_URL}/notes`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ note: note })
-    })
+    fetch(`${API_URL}/notes`, data)
       .then(response => response.json())
-      .then(note => {
-        dispatch({ type: "CREATE_NOTE_SUCCESS", payload: note });
-        dispatch(resetNoteForm());
-      })
+      .then(note =>
+        dispatch({
+          type: "CREATE_NOTE_SUCCESS",
+          payload: note
+        })
+      )
       .catch(error => console.log(error));
   };
 };
 
-export const deleteNote = note => {
+// DELETE NOTE
+
+export const deleteNote = id => {
+  let data = {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  };
+
   return dispatch => {
-    return fetch(`${API_URL}/notes/${note}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application.json"
-      },
-      body: JSON.stringify({ note: note })
-    })
+    fetch(`${API_URL}/notes/${id}`, data)
       .then(response => response.json())
-      .then(note => {
-        dispatch({ type: "DELETE_NOTE_SUCCESS", payload: note });
-      })
+      .then(note =>
+        dispatch({
+          type: "DELETE_NOTE_SUCCESS",
+          payload: note
+        })
+      )
       .catch(error => console.log(error));
   };
 };

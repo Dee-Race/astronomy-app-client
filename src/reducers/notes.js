@@ -1,15 +1,21 @@
-export default function NoteReducer(state = { notes: [] }, action) {
+const initialState = {
+  current: {},
+  all: []
+};
+
+export default function notesReducer(state = initialState, action) {
   switch (action.type) {
     case "GET_NOTES_SUCCESS":
-      return action.notes;
+      return { ...state, all: action.payload };
 
     case "CREATE_NOTE_SUCCESS":
-      return state.concat(action.payload);
+      return { ...state, all: [...state.all, action.payload] };
 
     case "DELETE_NOTE_SUCCESS":
-      return Object.assign([{}], {
-        ...state.filter(note => note.id !== action.payload.id)
-      });
+      return {
+        ...state,
+        all: state.all.filter(note => note.id !== action.payload.id)
+      };
 
     default:
       return state;
