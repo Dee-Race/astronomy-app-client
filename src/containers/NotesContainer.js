@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { getNotes } from "../actions/notes";
-import { deleteNote } from "../actions/notes";
+import { getNotes, deleteNote } from "../actions/notes";
 import "./Notes.css";
 
 import NoteCard from "../components/NoteCard";
 import NotesFormContainer from "./NotesFormContainer";
 
 class NotesContainer extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.getNotes();
   }
 

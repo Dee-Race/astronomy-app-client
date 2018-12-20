@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import thunk from "redux-thunk";
 
 import notesReducer from "./reducers/notes";
-import noteFormData from "./reducers/noteFormData";
 
 // applyMiddleware makes asynchronus calls
 
@@ -10,8 +9,7 @@ import noteFormData from "./reducers/noteFormData";
 // then updates state from reducer function - notes reducer
 
 const reducers = combineReducers({
-  notes: notesReducer,
-  noteFormData
+  notes: notesReducer
 });
 
 const middleware = [thunk];

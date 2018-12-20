@@ -2,13 +2,7 @@
 
 export const updateNoteFormData = noteFormData => {
   return {
-    type: "UPDATED_DATA",
+    type: "UPDATED_NOTEFORM_DATA",
     payload: noteFormData
-  };
-};
-
-export const resetNoteForm = () => {
-  return {
-    type: "RESET_NOTE_FORM"
   };
 };
