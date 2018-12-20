@@ -15,7 +15,11 @@ class NoteCard extends Component {
         <p>{note.content}</p>
         <p>
           Submitted By: {note.submitted_by} <br />
-          <Button color="white" onClick={event => this.handleOnClick(event)}>
+          <Button
+            size="sm"
+            color="white"
+            onClick={event => this.handleOnClick(event)}
+          >
             Delete
           </Button>
         </p>
