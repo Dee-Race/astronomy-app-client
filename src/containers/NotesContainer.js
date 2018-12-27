@@ -40,6 +40,3 @@ export default connect(
   mapStateToProps,
   { getNotes, deleteNote }
 )(NotesContainer);
-
-// NotesFormContainer - removed from this page, can be added again
-// NotesFormContainer will be added to the dropdown "new"

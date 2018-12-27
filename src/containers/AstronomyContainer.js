@@ -5,7 +5,7 @@ import { fetchAstronomyData } from "../actions/fetchAstronomy";
 import "../App.css";
 
 class AstronomyContainer extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchAstronomyData();
   }
 
