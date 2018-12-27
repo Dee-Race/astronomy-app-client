@@ -2,13 +2,23 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 
 class NoteCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
   handleOnClick(event) {
     this.props.deleteNote(this.props.note.id);
   }
 
-  handleLikeCounter(event) {
-    this.props.likeCounter + 1;
-  }
+  handleLikeCounter = () => {
+    const newCount = this.state.count + 1;
+    this.setState({
+      count: newCount
+    });
+  };
 
   render() {
     const { note } = this.props;
@@ -26,8 +36,8 @@ class NoteCard extends Component {
           >
             Delete
           </Button>
-          <Button sz="sm" color="black">
-            LIKE
+          <Button sz="sm" color="black" onClick={this.handleLikeCounter}>
+            LIKE {this.state.count}
           </Button>
         </p>
       </div>
