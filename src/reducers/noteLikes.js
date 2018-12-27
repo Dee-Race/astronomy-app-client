@@ -3,7 +3,7 @@ initialState = {
   likes: []
 };
 
-export default function NoteLikesReducer(state = initialState, action) {
+export default function noteLikesReducer(state = initialState, action) {
   switch (action.type) {
     case "INCREMENT_LIKES":
       return {

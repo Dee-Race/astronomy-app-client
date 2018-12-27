@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 
 import notesReducer from "./reducers/notes";
 import astronomyReducer from "./reducers/astronomy";
+import noteLikesReducer from "./reducers/noteLikes";
 
 // applyMiddleware makes asynchronus calls
 
@@ -11,7 +12,8 @@ import astronomyReducer from "./reducers/astronomy";
 
 const reducers = combineReducers({
   notes: notesReducer,
-  astronomy: astronomyReducer
+  astronomy: astronomyReducer,
+  likesCount: noteLikesReducer
 });
 
 const middleware = [thunk];
