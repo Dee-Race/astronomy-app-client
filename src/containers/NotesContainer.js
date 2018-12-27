@@ -12,6 +12,9 @@ class NotesContainer extends Component {
     this.props.getNotes();
   }
 
+  // this method gets called just after the render method
+  // using this method for any long-running processes or asynchronous processes i.e fetching/updating data
+
   render() {
     const { notes } = this.props;
     return (

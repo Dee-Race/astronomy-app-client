@@ -6,6 +6,10 @@ class NoteCard extends Component {
     this.props.deleteNote(this.props.note.id);
   }
 
+  handleLikeCounter(event) {
+    this.props.likeCounter + 1;
+  }
+
   render() {
     const { note } = this.props;
     return (
@@ -21,6 +25,9 @@ class NoteCard extends Component {
             onClick={event => this.handleOnClick(event)}
           >
             Delete
+          </Button>
+          <Button sz="sm" color="black">
+            LIKE
           </Button>
         </p>
       </div>
