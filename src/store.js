@@ -27,3 +27,13 @@ export default createStore(
       : a => a
   )
 );
+
+// The store is responsible for both maintaining the state and accepting actions from the view
+// Only the store has access to the reducer
+// All of the application's data is in a single data structure called the state which is held in the store.
+
+// The app reads the state from the store
+// State is never mutated directly outside the store
+// The View's display the actions that describe what happened
+// Use Dispatch to send the actions to the store
+// A new state is created by combining old state and the action by a function called the reducer

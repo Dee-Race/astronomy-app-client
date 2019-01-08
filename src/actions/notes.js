@@ -74,3 +74,5 @@ export const deleteNote = id => {
       .catch(error => console.log(error));
   };
 };
+
+// The dispatch method is how we send actions to the store.
