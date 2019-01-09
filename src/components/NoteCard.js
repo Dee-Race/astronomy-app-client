@@ -9,6 +9,11 @@ class NoteCard extends Component {
     };
   }
 
+  // the count state is stored in the top level NoteCard component
+  // when the user clicks "LIKE", the button's onClick handler is called, bound to the handleLikeCounter
+  // the handleLikeCounter function updates the state with the new count
+  // because state was changed, React re-renders the NoteCard component, and the new counter value is displayed
+
   handleOnClick(event) {
     this.props.deleteNote(this.props.note.id);
   }
