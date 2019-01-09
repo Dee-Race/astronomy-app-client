@@ -40,3 +40,7 @@ export default connect(
   mapStateToProps,
   { getNotes, deleteNote }
 )(NotesContainer);
+
+// mapStateToProps extracts the notes from Redux's store and maps it to the notes prop.
+
+// connect function is what actually feeds the data from Redux through mapStateToProps
