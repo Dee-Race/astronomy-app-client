@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 
+import NoteCounterContainer from "../containers/NoteCounterContainer";
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 class NoteCard extends Component {
@@ -17,7 +19,7 @@ class NoteCard extends Component {
   }
 
   handleOnLike(event) {
-    this.setState = { likes: this.state.likes + 1 };
+    this.state = { likes: this.state.likes + 1 };
 
     const noteLikesInfo = {
       title: this.props.note.title,
@@ -55,7 +57,8 @@ class NoteCard extends Component {
           >
             LIKE
           </Button>
-          <span>{this.state.likes}</span>
+          {this.state.likes}
+          <span>{this.props.likesCount}</span>
           <Button
             size="sm"
             color="white"
