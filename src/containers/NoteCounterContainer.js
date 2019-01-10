@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/* import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Button } from "reactstrap";
 
@@ -7,11 +7,11 @@ import { incrementLikes } from "../actions/notesCounter";
 class NoteCounterContainer extends Component {
   incrementLikes = event => {
     const { name, value } = event.target;
-    const likesData = Object.assign({}, this.props.likesCount, {
+    const noteLikesInfo = Object.assign({}, this.props.likesCount, {
       [name]: value
     });
     this.props.incrementLikes({
-      likesCount: likesData,
+      likesCount: noteLikesInfo,
       noteId: this.props.noteId
     });
   };
@@ -43,4 +43,4 @@ export default connect(
 // connect is a higher-order function - it returns a function when you call it
 // and then calling that function with a component returns a new (wrapped) component.
 // connect hooks into Redux, pulls out the entire state, and passes it through the mapStateToProps function
-// the object you return from mapStateToProps gets fed into your component as props
+// the object you return from mapStateToProps gets fed into your component as props */

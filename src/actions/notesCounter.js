@@ -1,6 +1,7 @@
-export const incrementLikes = likesCount => {
+export const incrementLikes = () => {
   return {
-    type: "INCREMENT_LIKES",
-    payload: likesCount
+    type: "INCREMENT_LIKES"
   };
 };
+
+// payload not necessary

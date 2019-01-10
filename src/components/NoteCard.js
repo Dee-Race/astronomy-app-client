@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Button } from "reactstrap";
 
-import NoteCounterContainer from "../containers/NoteCounterContainer";
+import { incrementLikes } from "../actions/notesCounter";
+
+// import NoteCounterContainer from "../containers/NoteCounterContainer";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -19,7 +23,7 @@ class NoteCard extends Component {
   }
 
   handleOnLike(event) {
-    this.state = { likes: this.state.likes + 1 };
+    this.setState = { likes: this.state.likes + 1 };
 
     const noteLikesInfo = {
       title: this.props.note.title,
@@ -42,7 +46,7 @@ class NoteCard extends Component {
   }
 
   render() {
-    const { note } = this.props;
+    const { note, likes } = this.props;
     return (
       <div key={note.id} className="astronomy-note-card">
         <h3>{note.title}</h3>
@@ -50,14 +54,10 @@ class NoteCard extends Component {
         <p>{note.content}</p>
         <p>
           Submitted By: {note.submitted_by} <br />
-          <Button
-            size="sm"
-            color="white"
-            onClick={event => this.handleOnLike(event)}
-          >
+          <Button size="sm" color="white" onClick={this.props.incrementLikes}>
             LIKE
           </Button>
-          {this.state.likes}
+          {likes}
           <span>{this.props.likesCount}</span>
           <Button
             size="sm"
@@ -72,4 +72,28 @@ class NoteCard extends Component {
   }
 }
 
-export default NoteCard;
+const mapStateToProps = state => {
+  return {
+    likes: state.likesCount.likesCount
+  };
+};
+
+// mapStateToProps transforms the Redux state into an object containing props
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      incrementLikes
+    },
+    dispatch
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NoteCard);
+
+// connect is a higher-order function - it returns a function when you call it
+// and then calling that function with a component returns a new (wrapped) component.
+// connect hooks into Redux, pulls out the entire state, and passes it through the mapStateToProps function
+// the object you return from mapStateToProps gets fed into your component as props

@@ -4,12 +4,13 @@ const initialState = {
 
 // never mutating the original state
 
-// always returning state, never changing state
+// default always returning state, never changing state
 
 export default function noteLikesReducer(state = initialState, action) {
   switch (action.type) {
     case "INCREMENT_LIKES":
       return {
+        ...state,
         likesCount: state.likesCount + 1
       };
     default:
