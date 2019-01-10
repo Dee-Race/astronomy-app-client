@@ -7,7 +7,7 @@ import { incrementLikes } from "../actions/notesCounter";
 
 // import NoteCounterContainer from "../containers/NoteCounterContainer";
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
 
 class NoteCard extends Component {
   constructor(props) {
@@ -24,25 +24,6 @@ class NoteCard extends Component {
 
   handleOnLike(event) {
     this.setState = { likes: this.state.likes + 1 };
-
-    const noteLikesInfo = {
-      title: this.props.note.title,
-      date: this.props.note.date,
-      content: this.props.note.content,
-      submitted_by: this.props.note.submitted_by,
-      likes: this.state.likes
-    };
-    fetch(`${API_URL}/notes/${this.props.note.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ note: noteLikesInfo })
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ likes: data.likes });
-      });
   }
 
   render() {

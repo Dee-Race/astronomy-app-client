@@ -22,6 +22,8 @@ export default function notesReducer(state = initialState, action) {
   }
 }
 
+// using spread operator to return state
+
 // reducers returns the state of what you want
 
 // dispatch passes object to reducers - getting notesReducer and updating state
