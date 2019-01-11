@@ -3,27 +3,19 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Button } from "reactstrap";
 
-import { incrementLikes } from "../actions/notesCounter";
+import { incrementLikes } from "../actions/notes";
 
 // import NoteCounterContainer from "../containers/NoteCounterContainer";
 
 // const API_URL = process.env.REACT_APP_API_URL;
 
 class NoteCard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      likes: props.note.likes
-    };
-  }
-
   handleOnClick(event) {
     this.props.deleteNote(this.props.note.id);
   }
 
   handleOnLike(event) {
-    this.setState = { likes: this.state.likes + 1 };
+    this.props.incrementLikes(this.props.note.id);
   }
 
   render() {
@@ -35,7 +27,11 @@ class NoteCard extends Component {
         <p>{note.content}</p>
         <p>
           Submitted By: {note.submitted_by} <br />
-          <Button size="sm" color="white" onClick={this.props.incrementLikes}>
+          <Button
+            size="sm"
+            color="white"
+            onClick={event => this.handleOnLike(event)}
+          >
             LIKE
           </Button>
           {likes}
@@ -55,7 +51,7 @@ class NoteCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    likes: state.likesCount.likesCount
+    likes: state.likesCount
   };
 };
 
@@ -68,6 +64,11 @@ const mapDispatchToProps = dispatch =>
     },
     dispatch
   );
+
+// Turns an object whose values are ACTION creators, into an object with the same keys,
+// but with every action creator wrapped into a dispatch call so they may be invoked directly
+
+// The only use case for bindActionCreators is when you want to pass some action creators down to a component
 
 export default connect(
   mapStateToProps,

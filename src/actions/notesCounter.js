@@ -4,4 +4,4 @@ export const incrementLikes = () => {
   };
 };
 
-// payload not necessary
+// payload not necessary, can be null

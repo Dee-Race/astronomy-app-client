@@ -3,20 +3,29 @@ import thunk from "redux-thunk";
 
 import notesReducer from "./reducers/notes";
 import astronomyReducer from "./reducers/astronomy";
-import noteLikesReducer from "./reducers/noteLikes";
+// import noteLikesReducer from "./reducers/noteLikes";
 
-// applyMiddleware makes asynchronus calls
+// applyMiddleware makes asynchronus calls, extends Redux with custom functionality by wrapping the store's dispatch method
 
 // this.props.store.dispatch - passes the object to the reducers,
 // then updates state from reducer function - notes reducer
 
 const reducers = combineReducers({
   notes: notesReducer,
-  astronomy: astronomyReducer,
-  likesCount: noteLikesReducer
+  astronomy: astronomyReducer
+  //likesCount: noteLikesReducer
 });
 
+// Combines multiple reducers into a single reducing function with each reducer as a key/value pait
+// Then can be passed to createStore()
+
 const middleware = [thunk];
+
+// Redux thunk allows us to return a function inside of our action creator
+
+// With Redux you have ONE big STORE which is a JS object
+// Never mutating the data in the store, only creating new versions of this object
+// You have a full history of where the store started when the app initially started and every change along the way
 
 export default createStore(
   reducers,

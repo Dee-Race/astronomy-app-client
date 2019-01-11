@@ -15,12 +15,33 @@ class NotesFormContainer extends Component {
       submitted_by: ""
     };
   }
-  handleOnChange(event) {
+
+  // In React, it is a good idea to set up controlled forms
+  // A controlled form is a form that derives its input values from state
+
+  handleOnChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-  }
+  };
 
-  handleOnSubmit(event) {
+  // If we change state values, React will re-render and our input's will display the new state
+  // We need setState in order to initiate a state change
+  // This form displays whatever hanges a user makes - for this we need an event listener - onChange
+  // onChange fires every time the value of an input changes.
+
+  // We are invoking an anonymous function that accepts event as its argument(provided by the event listener)
+  // and then calls this.handleOnChange(event)
+
+  // The event contains data about the target, which is whatever the event was triggered on
+  // That target, being an input, has a value attribute. This attribute is equal to whatever has been entered into input
+  // event.target.value is whatever content is present when the event fired
+  // We then are updating state based on the event.target.value
+  // This in turn causes a re-render, and the cycle completes
+  // The new state values we just set are used to set the value attributes of the forms inputs
+
+  // From the user's perspective, the form behaves exactly how we'd expect, displaying the text that is typed
+
+  handleOnSubmit = event => {
     event.preventDefault();
     this.props.createNote(this.state);
     this.setState({
@@ -29,7 +50,7 @@ class NotesFormContainer extends Component {
       content: "",
       submitted_by: ""
     });
-  }
+  };
 
   render() {
     return (

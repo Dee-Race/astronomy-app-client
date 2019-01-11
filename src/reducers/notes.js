@@ -1,6 +1,7 @@
 const initialState = {
   current: {},
-  all: []
+  all: [],
+  likesCount: []
 };
 
 export default function notesReducer(state = initialState, action) {
@@ -15,6 +16,11 @@ export default function notesReducer(state = initialState, action) {
       return {
         ...state,
         all: state.all.filter(note => note.id !== action.payload.id)
+      };
+    case "INCREMENT_LIKES":
+      return {
+        ...state,
+        likesCount: state.likesCount + 1
       };
 
     default:
