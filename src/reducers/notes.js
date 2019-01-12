@@ -1,27 +1,33 @@
 const initialState = {
   current: {},
-  all: [],
-  likesCount: []
+  notes: []
 };
 
 export default function notesReducer(state = initialState, action) {
   switch (action.type) {
     case "GET_NOTES_SUCCESS":
-      return { ...state, all: action.payload };
+      return { ...state, notes: action.payload };
 
     case "CREATE_NOTE_SUCCESS":
-      return { ...state, all: [...state.all, action.payload] };
+      return { ...state, notes: [...state.notes, action.payload] };
 
     case "DELETE_NOTE_SUCCESS":
       return {
         ...state,
-        all: state.all.filter(note => note.id !== action.payload.id)
+        notes: state.notes.filter(note => note.id !== action.payload.id)
       };
     case "INCREMENT_LIKES":
-      return {
+      const updatedState = {
         ...state,
-        likesCount: state.likesCount + 1
+        notes: state.notes.map(note => {
+          if (note.id === action.payload.id) {
+            return { ...note, likes: action.payload.likes };
+          } else {
+            return note;
+          }
+        })
       };
+      return updatedState;
 
     default:
       return state;

@@ -92,23 +92,25 @@ export const deleteNote = id => {
 
 // Do similar action as createnote with persistance to backend
 
-export const incrementLikes = (note, id) => {
+export const incrementLikes = note => {
+  let likes = note.likes;
+
+  let newNote = { ...note, likes: note.likes + 1 };
   let data = {
     method: "PATCH",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ note: note.id })
+    body: JSON.stringify(newNote)
   };
-
   return dispatch => {
-    fetch(`${API_URL}/notes/${id}`, data)
+    fetch(`${API_URL}/notes/${note.id}`, data)
       .then(response => response.json())
-      .then(note =>
+      .then(newNote =>
         dispatch({
           type: "INCREMENT_LIKES",
-          payload: note
+          payload: newNote
         })
       )
       .catch(error => console.log(error));

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+// import { bindActionCreators } from "redux";
 import { Button } from "reactstrap";
 
 import { incrementLikes } from "../actions/notes";
@@ -15,11 +15,14 @@ class NoteCard extends Component {
   }
 
   handleOnLike(event) {
-    this.props.incrementLikes(this.props.note.id);
+    const { note } = this.props;
+
+    this.props.incrementLikes(note);
   }
 
   render() {
-    const { note, likes } = this.props;
+    const { note } = this.props;
+
     return (
       <div key={note.id} className="astronomy-note-card">
         <h3>{note.title}</h3>
@@ -34,8 +37,8 @@ class NoteCard extends Component {
           >
             LIKE
           </Button>
-          {likes}
-          <span>{this.props.likesCount}</span>
+          {note.likes}
+          <span>{this.props.likes}</span>
           <Button
             size="sm"
             color="white"
@@ -51,19 +54,19 @@ class NoteCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    likes: state.likesCount
+    likes: state.likes
   };
 };
 
 // mapStateToProps transforms the Redux state into an object containing props
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      incrementLikes
-    },
-    dispatch
-  );
+//const mapDispatchToProps = dispatch =>
+// bindActionCreators(
+//{
+//  incrementLikes
+// },
+// dispatch
+//);
 
 // Turns an object whose values are ACTION creators, into an object with the same keys,
 // but with every action creator wrapped into a dispatch call so they may be invoked directly
@@ -72,7 +75,7 @@ const mapDispatchToProps = dispatch =>
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { incrementLikes }
 )(NoteCard);
 
 // connect is a higher-order function - it returns a function when you call it

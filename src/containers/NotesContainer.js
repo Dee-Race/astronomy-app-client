@@ -36,7 +36,7 @@ class NotesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    notes: state.notes.all
+    notes: state.notes.notes
   };
 };
 
