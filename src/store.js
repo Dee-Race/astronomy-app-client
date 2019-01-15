@@ -21,6 +21,7 @@ const reducers = combineReducers({
 
 const middleware = [thunk];
 
+// THUNK allows you to make asynchronus calls to your back end
 // Redux thunk allows us to return a function inside of our action creator
 
 // With Redux you have ONE big STORE which is a JS object

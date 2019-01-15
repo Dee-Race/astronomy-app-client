@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 // import { bindActionCreators } from "redux";
 import { Button } from "reactstrap";
 
-import { incrementLikes } from "../actions/notes";
+import { incrementLikes, deleteNote } from "../actions/notes";
 
 // import NoteCounterContainer from "../containers/NoteCounterContainer";
 
@@ -75,7 +75,7 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { incrementLikes }
+  { incrementLikes, deleteNote }
 )(NoteCard);
 
 // connect is a higher-order function - it returns a function when you call it

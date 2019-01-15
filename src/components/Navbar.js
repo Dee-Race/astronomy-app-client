@@ -7,7 +7,7 @@ export const NavbarFeatures = () => {
   return (
     <div>
       <Navbar color="blue" light expand="md">
-        <NavbarBrand style={{ color: "white" }} href="/">
+        <NavbarBrand style={{ color: "white" }} tag={Link} to="/">
           AstronomyApp
         </NavbarBrand>
         <Nav className="ml-auto" navbar>

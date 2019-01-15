@@ -93,7 +93,7 @@ export const deleteNote = id => {
 // Do similar action as createnote with persistance to backend
 
 export const incrementLikes = note => {
-  let likes = note.likes;
+  // let likes = note.likes;
 
   let newNote = { ...note, likes: note.likes + 1 };
   let data = {

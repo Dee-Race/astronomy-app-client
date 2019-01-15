@@ -7,12 +7,18 @@ import "./Notes.css";
 import NoteCard from "../components/NoteCard";
 import NotesFormContainer from "./NotesFormContainer";
 
+import { Button } from "reactstrap";
+
 // A component class implements a render method, which returns a child component
 
 class NotesContainer extends Component {
   componentDidMount() {
     this.props.getNotes();
   }
+
+  handleOnSortButton = notes => {
+    console.log(this.props.notes);
+  };
 
   // ComponentDidMount is invoked once, after the initial rendering occurs
 
@@ -21,7 +27,15 @@ class NotesContainer extends Component {
     return (
       <div className="astronomy-note-container">
         <NotesFormContainer />
+        <Button
+          size="sm"
+          color="white"
+          onClick={() => this.handleOnSortButton()}
+        >
+          SORT NOTES BY LIKES
+        </Button>
         <h1>AstroNotes</h1>
+
         {notes.map(note => (
           <NoteCard
             key={note.id}
@@ -39,6 +53,8 @@ const mapStateToProps = state => {
     notes: state.notes.notes
   };
 };
+
+// mapStateToProps transforms the Redux state into an object containing props
 
 // The connect function is taking care of task 1, it is synced with the store
 // listening to each change in the state that occurs - when a change occurs, it calls a function

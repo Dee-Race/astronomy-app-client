@@ -4,7 +4,7 @@ const URL = `https://api.nasa.gov/planetary/apod?api_key=${
 
 // Async Actions //
 
-// GET NOTES - FETCH REQUEST
+// GET ASTRONOMY - FETCH REQUEST
 
 export const fetchAstronomyData = () => {
   let data = {
