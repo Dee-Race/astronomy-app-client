@@ -12,26 +12,50 @@ import { Button } from "reactstrap";
 // A component class implements a render method, which returns a child component
 
 class NotesContainer extends Component {
+  state = {
+    notes: []
+  };
+
   componentDidMount() {
     this.props.getNotes();
   }
 
-  handleOnSortButton = notes => {
-    console.log(this.props.notes);
-  };
-
   // ComponentDidMount is invoked once, after the initial rendering occurs
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.notes) {
+      this.setState({
+        notes: nextProps.notes
+      });
+    }
+  }
+
+  // This lifecyle method will continue until version 17
+  // unsafe to unconditionally override state using either of these lifecycles ( componentWillRecieveProps and getDerivedStateFromProps)
+  // This method is invoked before a mounted component recieves new props.
+
+  handleOnSortButton = () => {
+    function compare(a, b) {
+      if (a.likes > b.likes) return -1;
+      if (a.likes < b.likes) return 1;
+      return 0;
+    }
+
+    let sorted = this.props.notes.sort(compare);
+
+    this.setState({ notes: sorted });
+  };
+
+  // comparison function based on amount of likes per note
+  // DESC order
+
   render() {
-    const { notes } = this.props;
+    const { notes } = this.state;
+
     return (
       <div className="astronomy-note-container">
         <NotesFormContainer />
-        <Button
-          size="sm"
-          color="white"
-          onClick={() => this.handleOnSortButton()}
-        >
+        <Button size="sm" color="white" onClick={this.handleOnSortButton}>
           SORT NOTES BY LIKES
         </Button>
         <h1>AstroNotes</h1>
