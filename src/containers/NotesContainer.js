@@ -16,19 +16,21 @@ class NotesContainer extends Component {
     notes: []
   };
 
+  // State allows React components to change their output over time in response to user actions
+
   componentDidMount() {
     this.props.getNotes();
   }
 
   // ComponentDidMount is invoked once, after the initial rendering occurs
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.notes) {
-      this.setState({
-        notes: nextProps.notes
-      });
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.notes) {
+  //     this.setState({
+  //       notes: nextProps.notes
+  //     });
+  //   }
+  // }
 
   // This lifecyle method will continue until version 17
   // unsafe to unconditionally override state using either of these lifecycles ( componentWillRecieveProps and getDerivedStateFromProps)
@@ -41,16 +43,30 @@ class NotesContainer extends Component {
       return 0;
     }
 
-    let sorted = this.props.notes.sort(compare);
+    let sorted = [...this.props.notes].sort(compare); //this.props.notes.sort(compare)};
+
+    console.log(sorted);
 
     this.setState({ notes: sorted });
   };
 
+  // When the sort() function compares two values, it sends the values to the compare function
+  // and sorts the values according to the returned (negative, zero, positive) value.
+
   // comparison function based on amount of likes per note
   // DESC order
 
+  // UI update by calling setState() with an object containing the sorted notes,
+  // calls render() method again to learn what should be on the screen
+
+  // if this.state.notes !== [] return this.state
+  // or else if this.props return .....
+
   render() {
-    const { notes } = this.state;
+    const notes =
+      this.state.notes == [].length > 0 ? this.props.notes : this.state.notes;
+
+    // if this.state.notes is equal to an array with a length greater than 0, return this.props.notes, or else return this.state.notes
 
     return (
       <div className="astronomy-note-container">
